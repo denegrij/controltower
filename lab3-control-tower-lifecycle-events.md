@@ -57,57 +57,57 @@ In this part of the Lab, you will launch an AWS CloudFormation Stack to setup th
 
 In this section you will create an Organizational Unit (OU) from AWS Control Tower. We will use this OU to enable a guardrail in the next step:
 
-4.1. Login to AWS Control Tower Dashboard and click on Organizational units on the left Sidebar.  
-4.2. This opens up an Organizational units window. Click on Add an OU button.  
-4.3. Provide a new OU Name (say `Sandboxes`) and click on Add button.  
-4.4. Wait for green Success notification on top of the page.  
+2.1. Login to AWS Control Tower Dashboard and click on Organizational units on the left Sidebar.  
+2.2. This opens up an Organizational units window. Click on Add an OU button.  
+2.3. Provide a new OU Name (say `Sandboxes`) and click on Add button.  
+2.4. Wait for green Success notification on top of the page.  
 
 ### Enable Guardrails
 
 In this section you will enable a guardrail on newly created OU. Later in this lab when you create a new AWS account, it will have this guardrail enabled by default:
 
-5.1. While you are still on AWS Control Tower Dashboard, Click on Guardrails on the left Sidebar.  
-5.2. This lists all the Guardrails. Search for **Disallow internet connection through SSH** and click on it.  
-5.3. Scroll down to Organizational units enabled section and click on Enable guardrail on OU button.  
-5.4. Select the OU named as `Sandboxes` and click on Enable guardrail on OU button.  
-5.5. Wait for green Success notification on top of the page.  
+3.1. While you are still on AWS Control Tower Dashboard, Click on Guardrails on the left Sidebar.  
+3.2. This lists all the Guardrails. Search for **Disallow internet connection through SSH** and click on it.  
+3.3. Scroll down to Organizational units enabled section and click on Enable guardrail on OU button.  
+3.4. Select the OU named as `Sandboxes` and click on Enable guardrail on OU button.  
+3.5. Wait for green Success notification on top of the page.  
 
 ### Deploy stack to create lab environment in your account
 
-6.1. Log in to your AWS Control Tower `master` account.  
-6.2. Choose the appropriate region.  
-6.3. Click on the following link to start deploying the stack:  
+4.1. Log in to your AWS Control Tower `master` account.  
+4.2. Choose the appropriate region.  
+4.3. Click on the following link to start deploying the stack:  
 
 https://console.aws.amazon.com/cloudformation#/stacks/new?stackName=CtLifeCycleEventsLabSetup&templateURL=https://marketplace-sa-resources-ct-us-west-2.s3.amazonaws.com/ct_lifecycle_labenv_setup.yaml
 
-6.4. While on Create Stack page, choose NEXT.  
-6.5. On Specify stack details page, enter the information you noted in `steps 5.4` and `5.8` and choose NEXT.  
+4.4. While on Create Stack page, choose NEXT.  
+4.5. On Specify stack details page, enter the information you noted in `steps 5.4` and `5.8` and choose NEXT.  
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/cft_parameters.png?raw=true)
 
-6.6. Under the Configure stack options page, choose NEXT.  
-6.7. Under the Review page, `scroll down`, and select, I acknowledge that AWS CloudFormation might create IAM resources with custom names. Under Capabilities. Then choose Create stack.  
+4.6. Under the Configure stack options page, choose NEXT.  
+4.7. Under the Review page, `scroll down`, and select, I acknowledge that AWS CloudFormation might create IAM resources with custom names. Under Capabilities. Then choose Create stack.  
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/iam_capabilities.png?raw=true)
 
-6.8. Wait for the stack state change to CREATE_COMPLETE  
+4.8. Wait for the stack state change to CREATE_COMPLETE  
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/stack_complete.png?raw=true)
 
 ### Create a new AWS account from Account Factory
 
-7.1. Log in to Control Tower `Master` account using the `User portal URL` and `credentials`.  
-7.2. [Click HERE](http://console.aws.amazon.com/controltower/home/accountfactory) to jump on to the Account Factory home page.  
-7.3. In the Account Factory page, under Network configuration, choose Edit.  
+5.1. Log in to Control Tower `Master` account using the `User portal URL` and `credentials`.  
+5.2. [Click HERE](http://console.aws.amazon.com/controltower/home/accountfactory) to jump on to the Account Factory home page.  
+5.3. In the Account Factory page, under Network configuration, choose Edit.  
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/account_factory_edit.png?raw=true)
 
-7.4. Uncheck all five regions under Regions for VPC Creation and choose Save. By unselecting the regions, you are skipping the creation of VPCs on the new AWS account, reducing the overall time it takes for creating new AWS Account.  
+5.4. Uncheck all five regions under Regions for VPC Creation and choose Save. By unselecting the regions, you are skipping the creation of VPCs on the new AWS account, reducing the overall time it takes for creating new AWS Account.  
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/account_factory_edit-2.png?raw=true)
 
-7.5. In the Account Factory page, choose Enroll account.  
-7.6. This opens up the Create account page. Key in below information.  
+5.5. In the Account Factory page, choose Enroll account.  
+5.6. This opens up the Create account page. Key in below information.  
 
 |Parameter Name	|Input value	|
 |---	|---	|
@@ -118,7 +118,7 @@ https://console.aws.amazon.com/cloudformation#/stacks/new?stackName=CtLifeCycleE
 |AWS SSO user name `Last name`	|Your Last Name	|
 |Organizational unit	|`Custom` or OU you created	|
 
-7.7. Follow the instructions on the screen, leave all `default` values and Enroll account.  
+5.7. Follow the instructions on the screen, leave all `default` values and Enroll account.  
 
 Congratulations, you successfully launched creation of a new AWS Account.   
 **Please Note!!** The account creation process includes creating a new AWS account, applying baselines, and applying the appropriate guardrails on the newly created account. This account creation operation could take up to 30 minutes.
@@ -129,66 +129,66 @@ While the new AWS account is being created, proceed to the next part of the lab.
 
 ### Verify the components that are setup as part of the lab setup
 
-While you wait for the creation of a new AWS account, look into the details of the resources deployed in steps 6.x.  
-8.1. While you are still on Control Tower `master` account, go to [CloudWatch Console](https://console.aws.amazon.com/cloudwatch).  
-8.2. Under CloudWatch and Events, choose Rules to open the Rules page.  
-8.3. On the Rules page, click on CaptureControlTowerLifeCycleEvents to open Summary page.  
-8.4. With in Event pattern content look for eventName list. These are the list of Events we watch for.  
+While you wait for the creation of a new AWS account, look into the details of the resources deployed in steps 4.x.  
+6.1. While you are still on Control Tower `master` account, go to [CloudWatch Console](https://console.aws.amazon.com/cloudwatch).  
+6.2. Under CloudWatch and Events, choose Rules to open the Rules page.  
+6.3. On the Rules page, click on CaptureControlTowerLifeCycleEvents to open Summary page.  
+6.4. With in Event pattern content look for eventName list. These are the list of Events we watch for.  
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/cloudwatch-event.png?raw=true)
 
-8.5. Scroll down the page and look at the Targets section.  
-8.6. Click on the Lambda function to inspect the code used to process the event received.  
-8.7. From the Lambda code you could see, when a new AWS Account is successfully provisioned, a new stack instance is added to the existing StackSets.  
+6.5. Scroll down the page and look at the Targets section.  
+6.6. Click on the Lambda function to inspect the code used to process the event received.  
+6.7. From the Lambda code you could see, when a new AWS Account is successfully provisioned, a new stack instance is added to the existing StackSets.  
 
 ### Verify the CloudFormation StackSets in master account
 
-9.1. Go to the [CloudFormation Console](http://console.aws.amazon.com/cloudformation) and choose StackSets.  
-9.2. Notice the StackSets `DOME9-ROLES-CREATION` and `VPC-FLOWLOG-CREATION` StackSets are created.  
+7.1. Go to the [CloudFormation Console](http://console.aws.amazon.com/cloudformation) and choose StackSets.  
+7.2. Notice the StackSets `DOME9-ROLES-CREATION` and `VPC-FLOWLOG-CREATION` StackSets are created.  
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/stackset_on_master.png?raw=true)
 
-9.3. Click on each StackSet and look for Stack instances. There are `no stacks` created for DOME9 stack, but you will a `Stack Instances(1)` for VPC-FLOWLOG stack.  
+7.3. Click on each StackSet and look for Stack instances. There are `no stacks` created for DOME9 stack, but you will a `Stack Instances(1)` for VPC-FLOWLOG stack.  
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/stackset_details.png?raw=true)
 
-9.4. These are the stack instances deployed as part of the lab initialization template you ran in 4.x steps.  
-9.5. _Bonus_: find out what is the trigger frequency for Lambda in `VPC-FLOWLOG-CREATION`, this can help you to do verification later.  
+7.4. These are the stack instances deployed as part of the lab initialization template you ran in 4.x steps.  
+7.5. _Bonus_: find out what is the trigger frequency for Lambda in `VPC-FLOWLOG-CREATION`, this can help you to do verification later.  
 
-Wait for the provisioning of new account to complete. This could take 20-30 minutes if you have disabled all the five regions in step 7.4.  
+Wait for the provisioning of new account to complete. This could take 20-30 minutes if you have disabled all the five regions in step 5.4.  
 
 ### Verify the status of Account Creation
 
-10.1. Log in to [Service Catalog Console](https://controltower.aws-management.tools/core/lifecycle/console.aws.amazon.com/servicecatalog/) and make sure you are in the `correct region`.  
-10.2. Choose Provisioned Products on the left side panel.  
-10.3. In Provisioned products list page, wait for the status to become `AVAILABLE`.  
+8.1. Log in to [Service Catalog Console](https://controltower.aws-management.tools/core/lifecycle/console.aws.amazon.com/servicecatalog/) and make sure you are in the `correct region`.  
+8.2. Choose Provisioned Products on the left side panel.  
+8.3. In Provisioned products list page, wait for the status to become `AVAILABLE`.  
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/account_available.png?raw=true)
 
 ### Verify VPC Flow Log configuration in new AWS account
 
 Run the following steps on the new AWS account you just created on the previous step.  
-12.1. Sign in into your newly created AWS account with AWSAdministratorAccess role.  
-12.2. Navigate to VPC console. You can do this in any AWS regions.  
-12.3. Click Launch VPC Wizard.  
+9.1. Sign in into your newly created AWS account with AWSAdministratorAccess role.  
+9.2. Navigate to VPC console. You can do this in any AWS regions.  
+9.3. Click Launch VPC Wizard.  
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/vpc_wizard1.png?raw=true)
 
 - Select VPC with a Single Public Subnet - Enter the VPC name, i.e. Test-VPC - Click Create VPC  
 
-12.4. Select the VPC from the list and go to Tags tab.  
-12.5. Click Add/Edit Tags.  
-12.6. Click Create Tag to add new key-value.  
-12.7. Enter the following key-value tag - Key = `flowlog` - Value = choose either `ALL`, `ACCEPT` or `REJECT`.  
-12.8. Click Save.  
-12.9. Lambda function will trigger periodically to scan for VPC with the tag key `flowlog`, this could take up to 5 minutes (based on the `CheckFrequency` value from `VPC-FLOWLOG-CREATION` StackSet).   
-12.10. Click on Flow Logs tab in the VPC console to verify if the flow log created successfully.   
+9.4. Select the VPC from the list and go to Tags tab.  
+9.5. Click Add/Edit Tags.  
+9.6. Click Create Tag to add new key-value.  
+9.7. Enter the following key-value tag - Key = `flowlog` - Value = choose either `ALL`, `ACCEPT` or `REJECT`.  
+9.8. Click Save.  
+9.9. Lambda function will trigger periodically to scan for VPC with the tag key `flowlog`, this could take up to 5 minutes (based on the `CheckFrequency` value from `VPC-FLOWLOG-CREATION` StackSet).   
+9.10. Click on Flow Logs tab in the VPC console to verify if the flow log created successfully.   
 
 ![alt text](https://controltower.aws-management.tools/core/lifecycle/images/vpc_flowlog_verify1.png?raw=true)
 
 **Note**: The S3 bucket is owned by `log archive` account, there’s no cross-account access from your new AWS account.  
 
-12.11 To generate Flow Log traffic, feel free to explore by launching EC2 instances in this VPC.  
-12.12 Flow Log is stored in the `log archive` account. Login to your `log archive` account with AWSAdministratorAccess role to locate the S3 bucket.  
+9.11 To generate Flow Log traffic, feel free to explore by launching EC2 instances in this VPC.  
+9.12 Flow Log is stored in the `log archive` account. Login to your `log archive` account with AWSAdministratorAccess role to locate the S3 bucket.  
 
 ## Lab cleanup procedure
 
