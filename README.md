@@ -1,4 +1,4 @@
-# AWS Control Tower Bootcamp for partners - 29/06/2020
+# AWS Control Tower Bootcamp for partners
 
 ## Labs:
 
