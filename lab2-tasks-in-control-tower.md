@@ -34,7 +34,7 @@ In this section, we will see how to access the shared accounts using AWS SSO. Th
 2. The email notification will have instructions to log in to AWS SSO and then to AWS Console on the AWS Control Tower master account.
 3. Click on the Master account to expand. Select Management console next to AWSAdministratorAccess Role to login AWS Management console of the master account (as shown below).
 
-[Image: image.png]
+![alt text](https://github.com/denegrij/controltower/blob/master/sso-control-tower-login.png?raw=true)
 1. Select the service Control Tower under Management & Governance.
 
 1.1.2 Switch roles to access the child account as Administrator:
@@ -57,7 +57,7 @@ We did this task already on the Lab 1, please feel free to skip this section if 
 
 1. Log into the AWS SSO screen, as described in the console access process. Choose **Command line or programmatic access**.
 
-[Image: image.png]
+![alt text](https://controltower.aws-management.tools/core/cttasks/images/control-tower-access-keys.png?raw=true)
 1. Copy the credential information from Option 1 and paste them on your terminal or putty session.
 
 Run some sample awscli commands:
@@ -66,13 +66,13 @@ Run some sample awscli commands:
 * You should see AWS Control Tower master account number by executing below command.
 
 ```
-`aws sts get-caller-identity --query 'Account' --output text        `
+aws sts get-caller-identity --query 'Account' --output text
 ```
 
 * Run below command to list out all the CloudFormation StackSets present on the master account.
 
 ```
-`aws cloudformation list-stacks --query 'StackSummaries[?StackStatus==`CREATE_COMPLETE`].StackName'`
+aws cloudformation list-stacks --query 'StackSummaries[?StackStatus==`CREATE_COMPLETE`].StackName'
 ```
 
 * * *
@@ -101,7 +101,6 @@ Here is the list of pre-defined user groups in AWS SSO:
 |User group name	|Description	|
 |---	|---	|
 |AWSAccountFactory	|Read-only access to account factory in AWS Service Catalog for end users	|
-|---	|---	|
 |AWSAuditAccountAdmins	|Admin rights to cross-account audit account	|
 |AWSControlTowerAdmins	|Admin rights to AWS Control Tower core and provisioned accounts	|
 |AWSLogArchiveAdmins	|Admin rights to log archive account	|
@@ -150,14 +149,6 @@ In this section, we will see how to create and delete an OU from AWS Control Tow
 
 ### 3.2 Enable / Disable Guardrails
 
-3.2.1 Enable a Strongly recommended Guardrail on a OU.
-
-
-1. We have already enabled the **Disallow internet connection through SSH** guardrail en the OU DEVE
-
-
-
-3.2.2 Disable a Strongly recommended Guardrail on new OU.
 As part of Lab 1, we have already enabled the **Disallow internet connection through SSH** guardrail on the DEVENV organizational unit, we will now disable it:
 
 1. Click on Guardrails on the left Sidebar and search for **Disallow internet connection through SSH** and click on it.
@@ -201,9 +192,9 @@ In this section, we’ll outline how to check per account costs from the master 
 2. From AWS Services, select AWS Cost Management and choose AWS Cost Explorer. PS: the AWS Cost Explorer is not enabled by default. It will take time to have reports once you enable the service. The account provided for you as part of this lab will have it enabled already.
 3. On the AWS Cost Explorer, choose the Explore costs link under Daily unblended costs ($). This opens Explore Cost & Usage.
 
-[Image: image.png]
+![alt text](https://controltower.aws-management.tools/core/cttasks/images/ct-billing-1.png?raw=true)
 1. Select the Linked Account filter under Group by. This gives the breakdown charges for each individual account.
 
-[Image: image.png]
+![alt text](https://controltower.aws-management.tools/core/cttasks/images/ct-billing-2.png?raw=true)
 
 [Next> Lab 3: AWS Control Tower Lifecycle Events](https://github.com/denegrij/controltower/blob/master/lab3-control-tower-lifecycle-events.md) 
