@@ -40,7 +40,7 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 2. The email notification will have instructions to log in to AWS SSO and then to AWS Console on the AWS Control Tower master account.
 3. Click on the **Master **account to expand. Select Management console next to *AWSAdministratorAccess *Role to login AWS Management console of the master account (as shown below)
 
-[Image: image1.png]
+[Image: sso-control-tower-login.png]
 1. Select the service Control Tower under Management & Governance.
 
 1.1.2 Create a new Organization Unit from the *AWS Control Tower* dashboard:
