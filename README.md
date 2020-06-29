@@ -67,7 +67,7 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 1. While you are still on AWS Control Tower Dashboard, Click on **Account factory** on the left Sidebar and click on **Edit **button.
 2. Under Edit account factory configuration, enable **Internet-accessible subnet** (required for the lab) and click on **Save**.
 
-[Image: image2.png]
+![alt text](https://github.com/denegrij/controltower/blob/master/control-tower-af-network-settings.png?raw=true)
 1. Wait for green Success notification on top of the page.
 
 Please **DO NOT SKIP** this step. Creating a internet-accessible subnet is required for this lab.
@@ -94,7 +94,7 @@ Few thing to keep in mind before proceeding further with the lab:
 2. Click on the **Enroll account **button.
 3. `Fill in the form`, pick a *ManagedOrganizationalUnit* from the drop down. Click on **Enroll account**
 
-[Image: image3.png]
+![alt text](https://github.com/denegrij/controltower/blob/master/quick-account-provisioning-launch.png?raw=true)
 1. As indicated in the `blue banner` on top of your screen, you could trace the status of account provisioning from *AWS Service Catalog service console* under individual Provisioned Product Name.
 2. The status of the launch can be monitored from the AWS Service Catalog dashboard, under the Provisioned products list by selecting the individual Provisioned Product Name
 
@@ -107,7 +107,7 @@ Use this procedure to delegate new AWS account creation activity to a user/group
 1. On *AWS Control Tower* management console, choose **Users and Access** from the left side navigation panel.
 2. Under User identity management, choose **View in AWS Single Sign-On**
 
-[Image: image4.png]
+![alt text](https://github.com/denegrij/controltower/blob/master/control-tower-view-sso.png?raw=true)
 1. An AWS SSO page will open. Then choose **Users** from the left side navigation panel.
 2. Choose **Add user**
 3. `Fill in the form` and choose **Next: Groups**
@@ -116,7 +116,7 @@ Use this procedure to delegate new AWS account creation activity to a user/group
 6. When the user accepts the invitation in its mailbox, it’ll need to generate a new password.
 7. The new user can log in to User portal URL with those credentials. The new user will now have the necessary AWSServiceCatalogEndUserAccess permissions to use Account Factory to create new accounts
 
-[Image: image5.png]
+![alt text](https://github.com/denegrij/controltower/blob/master/control-tower-new-user-login.png?raw=true)
 ## 3. Launching a PHP portal using LAMP Stack on newly provisioned account
 
 **John **provisioned a new AWS account using Account Factory in AWS Control Tower. The new AWS account is ready to be used by the LOB team. 
