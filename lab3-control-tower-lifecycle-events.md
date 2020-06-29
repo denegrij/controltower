@@ -1,4 +1,5 @@
 [Back to main](https://github.com/denegrij/controltower/blob/master/README.md) 
+[Back to Lab 2: Tasks in AWS Control Tower](https://github.com/denegrij/controltower/blob/master/lab2-tasks-in-control-tower.md) 
 
 # Lab 3: AWS Control Tower Lifecycle Events
 
@@ -179,4 +180,3 @@ C.5. Click Delete stack, wait until stack deleted successfully.
 C.6. Navigate to StackSet, confirm that StackSet `DOME9-ROLES-CREATION` and `VPC-FLOWLOG-CREATION` also deleted.
 C.7 On the `log archive` account, go to [S3 Console](https://console.aws.amazon.com/s3).
 C.8. Locate S3 bucket with name format `[$account_id]-vpcflowlog`, empty and delete the S3 bucket
-
