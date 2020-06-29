@@ -1,5 +1,7 @@
 [Back to main](https://github.com/denegrij/controltower/blob/master/README.md) 
 
+[Back to Lab 1: AWS Control Tower Account Factory](https://github.com/denegrij/controltower/blob/master/lab1-account-factory.md) 
+
 # Lab 2: Tasks in AWS Control Tower
 
 ## Overview
