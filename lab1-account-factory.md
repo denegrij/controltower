@@ -36,11 +36,11 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 
 ### 1.1 Create an Organizational Unit
 
-1.1.1 With AWS SSO, log into the AWS Control Tower management console in the **Master **account.
+1.1.1 With AWS SSO, log into the AWS Control Tower management console in the **Master** account.
 
 1. When you launch AWS Control Tower, you will receive an email notification with User portal URL and Username (referred to as admin user).
 2. The email notification will have instructions to log in to AWS SSO and then to AWS Console on the AWS Control Tower master account.
-3. Click on the **Master **account to expand. Select Management console next to *AWSAdministratorAccess *Role to login AWS Management console of the master account (as shown below)
+3. Click on the **Master** account to expand. Select Management console next to *AWSAdministratorAccess* Role to login AWS Management console of the master account (as shown below)
 
 ![alt text](https://github.com/denegrij/controltower/blob/master/sso-control-tower-login.png?raw=true)
 
@@ -50,13 +50,13 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 
 1. From the AWS Control Tower Dashboard, click on **Organizational units** on the left Sidebar.
 2. This opens up Organizational units page. Click on **Add an OU** button.
-3. Provide a new OU Name (for this lab we will call it as DEVENV) and click on **Add **button. Wait for green Success notification on top of the page.
+3. Provide a new OU Name (for this lab we will call it as DEVENV) and click on **Add** button. Wait for green Success notification on top of the page.
 
 ### 1.2 Enable a Strongly recommended Guardrail on the OU we just created
 
 1.2.1 Enable a Strongly recommended Guardrail on new OU:
 
-1. On AWS Control Tower Dashboard, click on **Guardrails **on the left Sidebar.
+1. On AWS Control Tower Dashboard, click on **Guardrails** on the left Sidebar.
 2. Search for **Disallow internet connection through SSH** and click on it.
 3. Scroll down to Organizational units enabled section and click on **Enable Guardrail on OU** button.
 4. Select the name of the OU created on step 2.1.1. (DEVENV for this lab) and click on **Enable guardrail on OU** button.
@@ -66,7 +66,7 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 
 1.3.1 Modify network configurations for new accounts:
 
-1. While you are still on AWS Control Tower Dashboard, Click on **Account factory** on the left Sidebar and click on **Edit **button.
+1. While you are still on AWS Control Tower Dashboard, Click on **Account factory** on the left Sidebar and click on **Edit** button.
 2. Under Edit account factory configuration, enable **Internet-accessible subnet** (required for the lab) and click on **Save**.
 
 ![alt text](https://github.com/denegrij/controltower/blob/master/control-tower-af-network-settings.png?raw=true)
@@ -93,7 +93,7 @@ Few thing to keep in mind before proceeding further with the lab:
 2.1.1 Provision new account using `Enroll account` option:
 
 1. On AWS Control Tower service console, choose **Account factory** from left side panel.
-2. Click on the **Enroll account **button.
+2. Click on the **Enroll account** button.
 3. `Fill in the form`, pick a *ManagedOrganizationalUnit* from the drop down. Click on **Enroll account**
 
 ![alt text](https://github.com/denegrij/controltower/blob/master/quick-account-provisioning-launch.png?raw=true)
@@ -104,7 +104,7 @@ Few thing to keep in mind before proceeding further with the lab:
 
 Use this procedure to delegate new AWS account creation activity to a user/group with no admin rights. We will use a pre-configured AWS SSO group to perform this task. 
 
-2.2.1 Log into the AWS Control Tower management console in the **Master **account:
+2.2.1 Log into the AWS Control Tower management console in the **Master** account:
 
 1. On *AWS Control Tower* management console, choose **Users and Access** from the left side navigation panel.
 2. Under User identity management, choose **View in AWS Single Sign-On**
@@ -121,34 +121,34 @@ Use this procedure to delegate new AWS account creation activity to a user/group
 ![alt text](https://github.com/denegrij/controltower/blob/master/control-tower-new-user-login.png?raw=true)
 ## 3. Launching a PHP portal using LAMP Stack on newly provisioned account
 
-**John **provisioned a new AWS account using Account Factory in AWS Control Tower. The new AWS account is ready to be used by the LOB team. 
-**Martha **from The LOB team owns an AWS CloudFormation template which she will use to deploy a web-app across the organization. 
-In this section we will see how **Martha **deploys their standard web-apps with an AWS CloudFormation template.
+**John** provisioned a new AWS account using Account Factory in AWS Control Tower. The new AWS account is ready to be used by the LOB team. 
+**Martha** from The LOB team owns an AWS CloudFormation template which she will use to deploy a web-app across the organization. 
+In this section we will see how **Martha** deploys their standard web-apps with an AWS CloudFormation template.
 
 ### 3.1 Launch a PHP portal on the newly provisioned account
 
 3.1.1 Login to the new AWS account as account owner (or you can assign AWSAdministratorAccess permissions to the AWS Control Tower admin user for that AWS account):
 
 1. When a new AWS account was launched by **John **from CCoE team, an email with SSO Portal URL and login information will be sent automatically to the email address provided during account creation.
-2. Using the information provided in the auto-generated email, **Martha **can setup a password and login to the new AWS account.
-3. **Martha **will see an AWS SSO screen identical to **John**, but with just the newly created AWS account listed out with role AWSAdministratorAccess.
+2. Using the information provided in the auto-generated email, **Martha** can setup a password and login to the new AWS account.
+3. **Martha** will see an AWS SSO screen identical to **John**, but with just the newly created AWS account listed out with role AWSAdministratorAccess.
 
 3.1.2 Deploy the AWS CloudFormation stack to install a web application:
 
 1. Login to AWS CloudFormation console screen [AWS Console](https://console.aws.amazon.com/cloudformation)
-2. Click on **Create Stack**, under **Choose a template** select **Specify an Amazon S3 template URL**,** **copy-paste the below link and click Next:
+2. Click on **Create Stack**, under **Choose a template** select **Specify an Amazon S3 template URL**, copy-paste the below link and click Next:
 
 `https://marketplace-sa-resources.s3.amazonaws.com/LAMP_Simple_single_instance_opt.json`
 
 1. Provide a Stack name as *PHPSampleWebApp*, select *VPC* which is labelled as *aws-controltower-VPC*, select *WebSubnetId* whose label starts with *aws-controltower-PublicSubnet* and leave other options as default for this lab.
-2. Click **Next**, review the options you select and click **Next **again.
+2. Click **Next**, review the options you select and click **Next** again.
 3. Wait for the Stack Status becomes CREATE_COMPLETE.
 4. Select Outputs tab and click on the value of WebsiteURL to visit the newly launched PHP website.
 
 ## 4. Investigate violation reported on the AWS Control Tower Dashboard
 
-When **Martha **deployed the AWS CloudFormation stack they usually run across multiple accounts, she accidentally left the SSH ports opened to the entire world unintentionally. 
-In the AWS Control Tower Dashboard, **John’s team **can easily trace this and take appropriate corrective actions on it.
+When **Martha** deployed the AWS CloudFormation stack they usually run across multiple accounts, she accidentally left the SSH ports opened to the entire world unintentionally. 
+In the AWS Control Tower Dashboard, **John’s team** can easily trace this and take appropriate corrective actions on it.
 
 In this part of this lab, we will see how the monitor your AWS Control Tower environment using the dashboard.
 
@@ -164,7 +164,7 @@ In this part of this lab, we will see how the monitor your AWS Control Tower env
 1. Click on Username on top right corner next to the region and select **Switch Role**.
 2. Enter the **Account ID** noted earlier under Account. Type ***AWSControlTowerExecution* **under Role and click on Switch Role
 3. Type http://console.aws.amazon.com/vpc on the browser to access VPCs on the LOB account
-4. Click on **SecurityGroups **and select the Security Group that starts with *PHPHelloWorldSample-xxx*
+4. Click on **SecurityGroups** and select the Security Group that starts with *PHPHelloWorldSample-xxx*
 5. Select Inbound Rules tab in the bottom panel and click on Edit rules. For SSH type the appropriate internal IP address range. For this lab we will select My IP and Save rules.
 
 4.1.3 Verify that the violations are fixed
