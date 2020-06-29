@@ -1,3 +1,5 @@
+[Back to main](https://github.com/denegrij/controltower/blob/master/README.md) 
+
 # Lab 1: AWS Control Tower Account Factory
 
 ## Overview
@@ -182,3 +184,4 @@ In this part of this lab, we will see how the monitor your AWS Control Tower env
 3. Follow the steps [here](https://amazon.awsapps.com/workdocs/index.html#/document/c7327bf83700ea59e1e360e101acd2ae52602fc5824f84217f2eebfdaf7f7c1b) to clean up AWS Control Tower managed resources.
 
 
+[Next> Lab 2: Tasks in AWS Control Tower](https://github.com/denegrij/controltower/blob/master/lab1-account-factory.md) 
