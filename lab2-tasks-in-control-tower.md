@@ -2,6 +2,8 @@
 
 [Back to Lab 1: AWS Control Tower Account Factory](https://github.com/denegrij/controltower/blob/master/lab1-account-factory.md) 
 
+***
+
 # Lab 2: Tasks in AWS Control Tower
 
 ## Overview
@@ -196,5 +198,7 @@ In this section, we’ll outline how to check per account costs from the master 
 1. Select the Linked Account filter under Group by. This gives the breakdown charges for each individual account.
 
 ![alt text](https://controltower.aws-management.tools/core/cttasks/images/ct-billing-2.png?raw=true)
+
+***
 
 [Next> Lab 3: AWS Control Tower Lifecycle Events](https://github.com/denegrij/controltower/blob/master/lab3-control-tower-lifecycle-events.md) 
