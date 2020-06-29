@@ -183,7 +183,6 @@ In this part of this lab, we will see how the monitor your AWS Control Tower env
 2. Follow below steps to remove an account provisioned through Account Factory. 
     1. [Unmanage a member account](https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html#unmanage-account) 
     2. [Closing an Account Created in Account Factory](https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html#delete-account)
-3. Follow the steps [here](https://amazon.awsapps.com/workdocs/index.html#/document/c7327bf83700ea59e1e360e101acd2ae52602fc5824f84217f2eebfdaf7f7c1b) to clean up AWS Control Tower managed resources.
 
 ***
 
