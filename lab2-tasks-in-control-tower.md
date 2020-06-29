@@ -1,4 +1,4 @@
-[Back to main](https://github.com/denegrij/controltower/blob/master/README.md) 
+[Back to main](https://github.com/denegrij/controltower/blob/master/overview.md) 
 
 [Back to Lab 1: AWS Control Tower Account Factory](https://github.com/denegrij/controltower/blob/master/lab1-account-factory.md) 
 
