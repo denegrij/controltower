@@ -72,7 +72,7 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 ![alt text](https://github.com/denegrij/controltower/blob/master/control-tower-af-network-settings.png?raw=true)
 1. Wait for green Success notification on top of the page.
 
-Please **DO NOT SKIP** this step. Creating a internet-accessible subnet is required for this lab.
+Please ***DO NOT SKIP*** this step. Creating a internet-accessible subnet is required for this lab.
 
 So far we were able to create an OU, enable a Strongly recommended guardrail on that OU and modify the network baseline settings.
 
@@ -184,4 +184,4 @@ In this part of this lab, we will see how the monitor your AWS Control Tower env
 3. Follow the steps [here](https://amazon.awsapps.com/workdocs/index.html#/document/c7327bf83700ea59e1e360e101acd2ae52602fc5824f84217f2eebfdaf7f7c1b) to clean up AWS Control Tower managed resources.
 
 
-[Next> Lab 2: Tasks in AWS Control Tower](https://github.com/denegrij/controltower/blob/master/lab1-account-factory.md) 
+[Next> Lab 2: Tasks in AWS Control Tower](https://github.com/denegrij/controltower/blob/master/lab2-tasks-in-control-tower.md) 
