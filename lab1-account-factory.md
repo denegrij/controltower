@@ -1,5 +1,7 @@
 [Back to main](https://github.com/denegrij/controltower/blob/master/README.md) 
 
+***
+
 # Lab 1: AWS Control Tower Account Factory
 
 ## Overview
