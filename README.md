@@ -1,4 +1,4 @@
-# AWS Control Tower Bootcamp for partners
+# AWS Control Tower Workshop
 
 ## Labs:
 
