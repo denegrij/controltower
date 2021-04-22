@@ -184,20 +184,6 @@ In this section, we will walk through the components of the dashboard.
 5. The Organizational units pane provides the overview of OUs in your AWS environment with their current Compliance status. You could click on OU name to look in to the details of the OU, Accounts, and Enabled guardrails.
 6. Similar to Organizations units, you can browse through the Accounts, Enabled guardrails and Noncompliant resources directly from the dashboard.
 
-* * *
-
-## 5. Check billing across all accounts
-
-In this section, we’ll outline how to check per account costs from the master account with AWS Cost Explorer.
-
-1. Log in to the Control Tower master account with role AWSAdministratorAccess.
-2. From AWS Services, select AWS Cost Management and choose AWS Cost Explorer. PS: the AWS Cost Explorer is not enabled by default. It will take time to have reports once you enable the service. The account provided for you as part of this lab will have it enabled already.
-3. On the AWS Cost Explorer, choose the Explore costs link under Daily unblended costs ($). This opens Explore Cost & Usage.
-
-![alt text](https://controltower.aws-management.tools/core/cttasks/images/ct-billing-1.png?raw=true)
-1. Select the Linked Account filter under Group by. This gives the breakdown charges for each individual account.
-
-![alt text](https://controltower.aws-management.tools/core/cttasks/images/ct-billing-2.png?raw=true)
 
 ***
 
