@@ -71,7 +71,7 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 1. While you are still on AWS Control Tower Dashboard, Click on **Account factory** on the left Sidebar and click on **Edit** button.
 2. Under Edit account factory configuration, enable **Internet-accessible subnet** (required for the lab) and click on **Save**.
 
-![alt text](https://github.com/denegrij/controltower/blob/master/control-tower-af-network-settings.png?raw=true)
+![alt text](https://github.com/denegrij/controltower/blob/master/Screenshot%202021-04-22%20at%2019.32.18.png?raw=true)
 1. Wait for green Success notification on top of the page.
 
 Please ***DO NOT SKIP*** this step. Creating a internet-accessible subnet is required for this lab.
