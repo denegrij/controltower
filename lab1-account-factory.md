@@ -42,7 +42,7 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 
 1. When you launch AWS Control Tower, you will receive an email notification with User portal URL and Username (referred to as admin user).
 2. The email notification will have instructions to log in to AWS SSO and then to AWS Console on the AWS Control Tower master account.
-3. Click on the **Master** account to expand. Select Management console next to *AWSAdministratorAccess* Role to login AWS Management console of the master account (as shown below)
+3. Click on the **Management** account to expand (the name for the lab will be *Landing Zone X*). Select Management console next to *AWSAdministratorAccess* Role to login AWS Management console of the master account (as shown below)
 
 ![alt text](https://github.com/denegrij/controltower/blob/master/sso-control-tower-login.png?raw=true)
 
@@ -52,16 +52,16 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 
 1. From the AWS Control Tower Dashboard, click on **Organizational units** on the left Sidebar.
 2. This opens up Organizational units page. Click on **Add an OU** button.
-3. Provide a new OU Name (for this lab we will call it as DEVENV) and click on **Add** button. Wait for green Success notification on top of the page.
+3. Provide a new OU Name (for this lab we will call it as ***DEVENV***) and click on **Add** button. Wait for green Success notification on top of the page.
 
 ### 1.2 Enable a Strongly recommended Guardrail on the OU we just created
 
 1.2.1 Enable a Strongly recommended Guardrail on new OU:
 
 1. On AWS Control Tower Dashboard, click on **Guardrails** on the left Sidebar.
-2. Search for **Disallow internet connection through SSH** and click on it.
+2. Search for **"Disallow internet connection through SSH"** and click on it.
 3. Scroll down to Organizational units enabled section and click on **Enable Guardrail on OU** button.
-4. Select the name of the OU created on step 2.1.1. (DEVENV for this lab) and click on **Enable guardrail on OU** button.
+4. Select the name of the OU created on step 2.1.1. (***DEVENV*** for this lab) and click on **Enable guardrail on OU** button.
 5. Wait for green Success notification on top of the page.
 
 ### 1.3 Modify Network baseline settings of the Account Factory
@@ -88,7 +88,6 @@ Few thing to keep in mind before proceeding further with the lab:
 * While admin user can access the Account Factory directly with AWSAdministratorAccess role, the new non-admin user with permissions to Account factory, should login using `AWSServiceCatalogEndUserAccess` role to create new accounts.
 * Ensure you are in the same region as AWS Control Tower, this is needed as AWS Service Catalog is a regional service.
 * If you login using `AWSServiceCatalogEndUserAccess` role, you won’t be able to access AWS Control Tower dashboard but you can directly access AWS Service Catalog.
-* The email IDs used for the accounts in AWS Control Tower should be in the same domain. As an example, having master account in *@example.com* and new AWS account in *@noexample.com* will NOT work.
 
 ### 2.1 Launch a new AWS Account using Account Factory as an AWS Control Tower Admin user
 
@@ -96,11 +95,19 @@ Few thing to keep in mind before proceeding further with the lab:
 
 1. On AWS Control Tower service console, choose **Account factory** from left side panel.
 2. Click on the **Enroll account** button.
-3. `Fill in the form`, pick a *ManagedOrganizationalUnit* from the drop down. Click on **Enroll account**
+3. `Fill in the form` with the following information:
+    a. For Account email, put *denegrij+lz[X]-new@amazon.com* (replacing "[X]" with your LZ number)
+    b. As display name you can use "Lamp"
+    c. For AWS SSO email, put ***your own email*** (this way you will receive the invitation to SSO and get Administration access to the account)
+    d. In AWS SSO user name, you can put your own name
+    e. In Organizational unit, pick the OU we created in Step 1 (*DEVENV*) from the drop down.
+    f. Click on **Enroll account**
 
 ![alt text](https://github.com/denegrij/controltower/blob/master/quick-account-provisioning-launch.png?raw=true)
 1. As indicated in the `blue banner` on top of your screen, you could trace the status of account provisioning from *AWS Service Catalog service console* under individual Provisioned Product Name.
 2. The status of the launch can be monitored from the AWS Service Catalog dashboard, under the Provisioned products list by selecting the individual Provisioned Product Name
+
+## The account creation will take aproximately 20 minutes
 
 ### 2.2 [optional] Create a new user and allow access to Account Factory
 
