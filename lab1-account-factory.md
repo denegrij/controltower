@@ -96,11 +96,17 @@ Few thing to keep in mind before proceeding further with the lab:
 1. On AWS Control Tower service console, choose **Account factory** from left side panel.
 2. Click on the **Enroll account** button.
 3. `Fill in the form` with the following information:
+
     a. For Account email, put *denegrij+lz[X]-new@amazon.com* (replacing "[X]" with your LZ number)
+    
     b. As display name you can use "Lamp"
+    
     c. For AWS SSO email, put ***your own email*** (this way you will receive the invitation to SSO and get Administration access to the account)
+    
     d. In AWS SSO user name, you can put your own name
+    
     e. In Organizational unit, pick the OU we created in Step 1 (*DEVENV*) from the drop down.
+    
     f. Click on **Enroll account**
 
 ![alt text](https://github.com/denegrij/controltower/blob/master/quick-account-provisioning-launch.png?raw=true)
