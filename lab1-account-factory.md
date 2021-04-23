@@ -44,7 +44,7 @@ In this lab, we are going to configure the AWS Organization structure that fits 
 2. The email notification will have instructions to log in to AWS SSO and then to AWS Console on the AWS Control Tower master account.
 3. Click on the **Management** account to expand (the name for the lab will be *Landing Zone X*). Select Management console next to *AWSAdministratorAccess* Role to login AWS Management console of the master account (as shown below)
 
-![alt text](https://github.com/denegrij/controltower/blob/master/sso-control-tower-login.png?raw=true)
+![alt text](https://github.com/denegrij/controltower/blob/master/Screenshot%202021-04-23%20at%2009.42.25.png?raw=true)
 
 1. Select the service Control Tower under Management & Governance.
 
@@ -109,7 +109,7 @@ Few thing to keep in mind before proceeding further with the lab:
     
     f. Click on **Enroll account**
 
-![alt text](https://github.com/denegrij/controltower/blob/master/quick-account-provisioning-launch.png?raw=true)
+![alt text](https://github.com/denegrij/controltower/blob/master/Screenshot%202021-04-23%20at%2009.55.58.png?raw=true)
 1. As indicated in the `blue banner` on top of your screen, you could trace the status of account provisioning from *AWS Service Catalog service console* under individual Provisioned Product Name.
 2. The status of the launch can be monitored from the AWS Service Catalog dashboard, under the Provisioned products list by selecting the individual Provisioned Product Name
 
